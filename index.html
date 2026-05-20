@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0053)file:///C:/Users/sami/Downloads/Nukhba_Hajj_2026.html -->
-<html lang="ar" dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>جدول مناسك الحج 1447 هـ</title>
-<link href="./index_files/css2" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
   :root {
     --emerald: #1a5c40;
@@ -1297,6 +1297,40 @@
   #installModal .im-step .st strong { color: #e8c97a; }
   /* ═══════════════════════════ */
 
+
+  /* ═══ Guide Folder Button ═══ */
+  .guide-folder-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: linear-gradient(135deg, #7a5c10 0%, #c9a84c 50%, #7a5c10 100%);
+    background-size: 200% auto;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 16px;
+    margin: 14px 0 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #1a1208;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 14px rgba(201,168,76,0.35);
+    transition: background-position 0.4s, transform 0.2s;
+    direction: rtl;
+  }
+  .guide-folder-btn:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+  }
+  .guide-folder-btn .gfb-icon { font-size: 22px; flex-shrink: 0; }
+  .guide-folder-btn .gfb-text { flex: 1; text-align: right; }
+  .guide-folder-btn .gfb-text .gfb-title { display: block; font-size: 14px; }
+  .guide-folder-btn .gfb-text .gfb-sub   { display: block; font-size: 11px; opacity: 0.7; margin-top: 1px; }
+  .guide-folder-btn .gfb-arrow { font-size: 16px; opacity: 0.7; }
+  /* ═══════════════════════════ */
+
 </style>
 
   <!-- PWA Standalone -->
@@ -1330,24 +1364,24 @@
         <span class="hmb-main">الخريطة التفاعلية ثلاثية الأبعاد</span>
         <span class="hmb-sub">للحرمين الشريفين &nbsp;•&nbsp; تعمل داخل مكة والمدينة</span>
       </div>
-      <span class="hmb-arrow">›</span>
+      <span class="hmb-arrow">&#x203A;</span>
     </button>
   </div>
   <div class="loc-result" id="locResult"></div>
 
     <!-- Live Weather Widget -->
-  <div class="weather-bar" id="weatherBar" style="transition: background 3s; background: linear-gradient(rgb(127, 29, 29) 0%, rgb(185, 28, 28) 30%, rgb(239, 68, 68) 65%, rgb(252, 165, 165) 100%);">
-    <div class="sky-orb" id="skyOrb">🌞</div>
+  <div class="weather-bar" id="weatherBar">
+    <div class="sky-orb" id="skyOrb">☀️</div>
     <div class="weather-info">
-      <div class="weather-location" id="wTimeLabel">🌡️ الطقس الحالي — مكة المكرمة • وقت الظهر</div>
-      <div class="weather-temp" id="wTemp">45°م</div>
-      <div class="weather-desc" id="wDesc">Sunny</div>
+      <div class="weather-location" id="wTimeLabel">🌡️ الطقس الحالي — مكة المكرمة</div>
+      <div class="weather-temp" id="wTemp"><span class="weather-loading">جاري التحميل...</span></div>
+      <div class="weather-desc" id="wDesc"></div>
     </div>
 
   </div>
 
   <!-- Day 4 -->
-  <div class="day-card theme-travel open">
+  <div class="day-card theme-travel">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-num">4</div>
       <div class="day-info">
@@ -1358,15 +1392,15 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx4">
-        <span class="heat-chip" id="wx4Max">☀️ نهار: 40°م</span>
-        <span class="heat-chip night" id="wx4Min">🌙 ليل: 27°م</span>
-        <span class="heat-chip tip" id="wx4Desc">استخدم المظلة دائماً</span>
+        <span class="heat-chip" id="wx4Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx4Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx4Desc">⏳ تحميل...</span>
       
       <div style="margin-top:12px"><strong style="font-size:13px;color:var(--emerald)">📋 دلائل إرشادية من الحملة</strong></div>
       <div class="guide-card" id="guide-haram">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🕌</span>
-          <span class="gh-title">دخول المسجد الحرام</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;haram&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">دخول المسجد الحرام</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('haram')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -1447,7 +1481,7 @@
       <div class="guide-card" id="guide-masaa">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🏃</span>
-          <span class="gh-title">دخول المسعى بعد الطواف</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;masaa&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">دخول المسعى بعد الطواف</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('masaa')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -1508,7 +1542,7 @@
       <div class="guide-card" id="guide-return">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🚌</span>
-          <span class="gh-title">الرجوع لمواقف الحافلات</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;return&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">الرجوع لمواقف الحافلات</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('return')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -1673,7 +1707,7 @@
         <div class="step-text">
           <strong>التوجه إلى مكة المكرمة</strong> والوصول إلى الفندق:
           <br>
-          <a class="hotel-btn" href="https://maps.google.com/?q=%D8%B2%D9%87%D8%B1%D8%A9+%D8%A7%D9%84%D8%B3%D8%B9%D8%AF+6+%D9%85%D9%83%D8%A9+%D8%A7%D9%84%D9%85%D9%83%D8%B1%D9%85%D8%A9" target="_blank">
+          <a class="hotel-btn" href="https://maps.google.com/?q=زهرة+السعد+6+مكة+المكرمة" target="_blank">
             📍 فندق زهرة السعد 6 — اضغط لفتح الموقع على الخريطة
           </a>
         </div>
@@ -1684,6 +1718,14 @@
         <div class="step-text"><strong>أداء مناسك العمرة:</strong> الطواف حول الكعبة المشرفة (7 أشواط)، ثم السعي بين الصفا والمروة (7 أشواط)، ثم الحلق أو التقصير — وبذلك تتم العمرة ✅</div>
       </div>
 
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1_wrPXf306UhvwDe_qVVNEQMr960eTlU_" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — يوم السفر والعمرة</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 أدعية يوم السفر والعمرة — مرتبة حسب المرحلة</div>
 
@@ -1755,21 +1797,23 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx5">
-        <span class="heat-chip" id="wx5Max">🌤️ نهار: 40°م</span>
-        <span class="heat-chip night" id="wx5Min">🌙 ليل: 27°م</span>
-        <span class="heat-chip tip" id="wx5Desc">شمس متفرقة</span>
-      </div>
+        <span class="heat-chip" id="wx5Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx5Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx5Desc">⏳ تحميل...</span>
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1q72s22wDTXSRLowA3CpQhz9eXmV2f5LI" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — اليوم 5</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
+    </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-text"><strong>حضور محاضرات ودورات تهيئة للحج</strong> في الفندق — التعرف على مناسك الحج وأحكامه وفضائله.</div>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-text">
-          <strong>صلاة الجمعة</strong> في <strong>مصلى الفندق</strong> أو في أي مكان بمكة 🕌
-          <div class="warning" style="margin-top:8px"><span class="icon">💡</span><span>مكة المكرمة كلها حرم — يصح أداء جميع الصلوات في مصلى الفندق وفي كل أرجائها</span></div>
-        </div>
-      </div>
+
       <div class="step">
         <div class="step-num">3</div>
         <div class="step-text"><strong>الراحة واستجمام الطاقة</strong> — شرب الماء الكافي والنوم المبكر تحضيراً لأيام المناسك.</div>
@@ -1789,10 +1833,18 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx6">
-        <span class="heat-chip" id="wx6Max">☀️ نهار: 41°م</span>
-        <span class="heat-chip night" id="wx6Min">🌙 ليل: 28°م</span>
-        <span class="heat-chip tip" id="wx6Desc">استخدم المظلة دائماً</span>
-      </div>
+        <span class="heat-chip" id="wx6Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx6Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx6Desc">⏳ تحميل...</span>
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/17t5zZSiX-MRX0P2hArVmONwKr75mskCP" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — اليوم 6</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
+    </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-text"><strong>التسوق صباحاً حتى الساعة 12 ظهراً</strong> — شراء الهدايا والمستلزمات قبل بدء المناسك.</div>
@@ -1827,10 +1879,18 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx7">
-        <span class="heat-chip" id="wx7Max">☀️ نهار: 41°م</span>
-        <span class="heat-chip night" id="wx7Min">🌙 ليل: 28°م</span>
-        <span class="heat-chip tip" id="wx7Desc">استخدم المظلة دائماً</span>
-      </div>
+        <span class="heat-chip" id="wx7Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx7Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx7Desc">⏳ تحميل...</span>
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1WmGSRv0YGGf_i3QcA14U7f6rvcqADEOZ" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — اليوم 7</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
+    </div>
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-text"><strong>محاضرة تهيئة للحج</strong> — المراجعة الأخيرة والشاملة لجميع أحكام مناسك الحج قبل الانطلاق.</div>
@@ -1858,7 +1918,7 @@
   </div>
 
   <!-- Day 8 -->
-  <div class="day-card theme-tawiyah">
+  <div class="day-card theme-tawiyah open">
     <div class="day-header" onclick="toggle(this)">
       <div class="day-num">8</div>
       <div class="day-info">
@@ -1869,9 +1929,9 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx8">
-        <span class="heat-chip" id="wx8Max">☀️ نهار: 42°م</span>
-        <span class="heat-chip night" id="wx8Min">🌙 ليل: 29°م</span>
-        <span class="heat-chip tip" id="wx8Desc">استخدم المظلة دائماً</span>
+        <span class="heat-chip" id="wx8Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx8Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx8Desc">⏳ تحميل...</span>
       </div>
       <div class="step">
         <div class="step-num">1</div>
@@ -1903,6 +1963,14 @@
         <div class="step-text"><strong>الصلوات في منى:</strong> صلاة كل الصلوات <strong>قصرًا</strong> في وقتها (بدون جمع) مع الحفاظ على السنن والمبيت ليلة التاسع.</div>
       </div>
     
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1tYRvsncC-KXYnvsGrWL3eejtCKOsbQ-a" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — التروية وعرفة</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 الأدعية المستحبة — يوم التروية        <div class="dua-item">
           <div class="dua-label">التلبية للحج (تُكرَّر من الإحرام حتى رمي جمرة العقبة):</div>
@@ -1938,9 +2006,9 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx9">
-        <span class="heat-chip" id="wx9Max">☀️ نهار: 43°م</span>
-        <span class="heat-chip night" id="wx9Min">🌙 ليل: 29°م</span>
-        <span class="heat-chip tip" id="wx9Desc">استخدم المظلة دائماً</span>
+        <span class="heat-chip" id="wx9Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx9Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx9Desc">⏳ تحميل...</span>
       </div>
       <div class="step">
         <div class="step-num">1</div>
@@ -1981,6 +2049,14 @@
         <div class="step-text"><strong>في مزدلفة:</strong> صلاة المغرب والعشاء <strong>جمع تأخير وقصراً</strong>، وجمع الجمرات (<strong>49 حصوة</strong>) مع المبيت والذكر.</div>
       </div>
     
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1tYRvsncC-KXYnvsGrWL3eejtCKOsbQ-a" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — التروية وعرفة</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 أفضل الأدعية — يوم عرفة        <div class="dua-item">
           <div class="dua-label">دعاء خير الدنيا والآخرة (يُكثَر منه في عرفة):</div>
@@ -2075,9 +2151,9 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx10">
-        <span class="heat-chip" id="wx10Max">☀️ نهار: 42°م</span>
-        <span class="heat-chip night" id="wx10Min">🌙 ليل: 29°م</span>
-        <span class="heat-chip tip" id="wx10Desc">استخدم المظلة دائماً</span>
+        <span class="heat-chip" id="wx10Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx10Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx10Desc">⏳ تحميل...</span>
       </div>
       <div class="step">
         <div class="step-num">1</div>
@@ -2086,7 +2162,7 @@
       <div class="step">
         <div class="step-num">2</div>
         <div class="step-text"><strong>التوجه لرمي جمرة العقبة الكبرى:</strong> وهي الجمرة الوحيدة التي تُرمى يوم النحر، تقع في آخر منى من جهة مكة المكرمة.
-          <a class="hotel-btn" style="background:linear-gradient(135deg,#27ae60 0%,#1a6b3a 100%);margin-top:8px" href="https://maps.google.com/?q=21.4195,39.8703&amp;label=%D8%AC%D8%B3%D8%B1+%D8%A7%D9%84%D8%AC%D9%85%D8%B1%D8%A7%D8%AA" target="_blank">
+          <a class="hotel-btn" style="background:linear-gradient(135deg,#27ae60 0%,#1a6b3a 100%);margin-top:8px" href="https://maps.google.com/?q=21.4195,39.8703&label=جسر+الجمرات" target="_blank">
             🕌 موقع جسر الجمرات
           </a>
           <div class="dist-row">
@@ -2137,7 +2213,7 @@
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🪨</span>
           <span class="gh-title">العودة من الجمرات للفندق</span>
-          <button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;jamarat&#39;)">
+          <button class="watch-btn" onclick="event.stopPropagation();openVModal('jamarat')">
             <span class="wb-icon">▶️</span> شاهد
           </button>
           <span class="gh-toggle">▾</span>
@@ -2159,6 +2235,14 @@
           </div>
         </div>
       </div>
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1QZnSZlrWwTKejUPQTiMV_1-iQfk0RU4w" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — يوم النحر</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 الأدعية المستحبة — يوم النحر</div>
         <div class="dua-item">
@@ -2190,15 +2274,15 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx11">
-        <span class="heat-chip" id="wx11Max">🌤️ نهار: 41°م</span>
-        <span class="heat-chip night" id="wx11Min">🌙 ليل: 28°م</span>
-        <span class="heat-chip tip" id="wx11Desc">شمس متفرقة</span>
+        <span class="heat-chip" id="wx11Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx11Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx11Desc">⏳ تحميل...</span>
       
       <div style="margin-top:12px"><strong style="font-size:13px;color:var(--emerald)">📋 دلائل إرشادية من الحملة</strong></div>
       <div class="guide-card" id="guide-haram-d11">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🕌</span>
-          <span class="gh-title">دخول الحرم — طواف الإفاضة</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;haram&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">دخول الحرم — طواف الإفاضة</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('haram')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -2279,7 +2363,7 @@
       <div class="guide-card" id="guide-return-d11">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🚌</span>
-          <span class="gh-title">الرجوع للحافلة — بعد الإفاضة</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;return&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">الرجوع للحافلة — بعد الإفاضة</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('return')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -2418,11 +2502,11 @@
             <span class="pebble-chip">7 الكبرى</span>
           </div>
           <div style="margin-top:8px">
-          <a class="hotel-btn" style="background:linear-gradient(135deg,#27ae60 0%,#1a6b3a 100%);margin-top:8px" href="https://maps.google.com/?q=21.4195,39.8703&amp;label=%D8%AC%D8%B3%D8%B1+%D8%A7%D9%84%D8%AC%D9%85%D8%B1%D8%A7%D8%AA" target="_blank">
+          <a class="hotel-btn" style="background:linear-gradient(135deg,#27ae60 0%,#1a6b3a 100%);margin-top:8px" href="https://maps.google.com/?q=21.4195,39.8703&label=جسر+الجمرات" target="_blank">
             🕌 موقع جسر الجمرات
           </a></div>
           <div style="margin-top:8px;font-size:13px;color:var(--text-light);">⏰ وقت الرمي: بعد زوال الشمس (أي بعد الظهر)
-          <a class="hotel-btn" style="background:linear-gradient(135deg,#27ae60 0%,#1a6b3a 100%);margin-top:8px" href="https://maps.google.com/?q=21.4195,39.8703&amp;label=%D8%AC%D8%B3%D8%B1+%D8%A7%D9%84%D8%AC%D9%85%D8%B1%D8%A7%D8%AA" target="_blank">
+          <a class="hotel-btn" style="background:linear-gradient(135deg,#27ae60 0%,#1a6b3a 100%);margin-top:8px" href="https://maps.google.com/?q=21.4195,39.8703&label=جسر+الجمرات" target="_blank">
             🕌 موقع جسر الجمرات
           </a></div>
         </div>
@@ -2444,7 +2528,7 @@
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🪨</span>
           <span class="gh-title">العودة من الجمرات للفندق</span>
-          <button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;jamarat&#39;)">
+          <button class="watch-btn" onclick="event.stopPropagation();openVModal('jamarat')">
             <span class="wb-icon">▶️</span> شاهد
           </button>
           <span class="gh-toggle">▾</span>
@@ -2466,6 +2550,14 @@
           </div>
         </div>
       </div>
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1Nc8UEODWsJtgVaaRrk0Kg5t9yaN4YKVH" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — اليوم 11</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 الأدعية — طواف الإفاضة والرمي        <div class="dua-item">
           <div class="dua-label">بين الجمرة الصغرى والوسطى (الوقوف للدعاء):</div>
@@ -2509,9 +2601,9 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx12">
-        <span class="heat-chip" id="wx12Max">☀️ نهار: 41°م</span>
-        <span class="heat-chip night" id="wx12Min">🌙 ليل: 28°م</span>
-        <span class="heat-chip tip" id="wx12Desc">استخدم المظلة دائماً</span>
+        <span class="heat-chip" id="wx12Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx12Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx12Desc">⏳ تحميل...</span>
       </div>
       <div class="step">
         <div class="step-num">1</div>
@@ -2560,7 +2652,7 @@
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🪨</span>
           <span class="gh-title">العودة من الجمرات للفندق</span>
-          <button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;jamarat&#39;)">
+          <button class="watch-btn" onclick="event.stopPropagation();openVModal('jamarat')">
             <span class="wb-icon">▶️</span> شاهد
           </button>
           <span class="gh-toggle">▾</span>
@@ -2582,6 +2674,14 @@
           </div>
         </div>
       </div>
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1DI-BpzYSfRtz7_xhvtRn0Vnzb11r7mfY" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — اليوم 12</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 الأدعية — ثاني أيام التشريق        <div class="dua-item">
           <div class="dua-label">تكبير أيام التشريق (يُكثَر منه):</div>
@@ -2616,15 +2716,15 @@
     <div class="day-body">
       
       <div class="heat-row" id="wx13">
-        <span class="heat-chip" id="wx13Max">☀️ نهار: 40°م</span>
-        <span class="heat-chip night" id="wx13Min">🌙 ليل: 27°م</span>
-        <span class="heat-chip tip" id="wx13Desc">استخدم المظلة دائماً</span>
+        <span class="heat-chip" id="wx13Max">🌡️ —</span>
+        <span class="heat-chip night" id="wx13Min">🌙 —</span>
+        <span class="heat-chip tip" id="wx13Desc">⏳ تحميل...</span>
       
       <div style="margin-top:12px"><strong style="font-size:13px;color:var(--emerald)">📋 دلائل إرشادية من الحملة</strong></div>
       <div class="guide-card" id="guide-haram-d13">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🕌</span>
-          <span class="gh-title">دخول الحرم — طواف الوداع</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;haram&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">دخول الحرم — طواف الوداع</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('haram')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -2705,7 +2805,7 @@
       <div class="guide-card" id="guide-return-d13">
         <div class="guide-card-header" onclick="toggleGuide(this)">
           <span class="gh-icon">🚌</span>
-          <span class="gh-title">الرجوع للحافلة — بعد الوداع</span><button class="watch-btn" onclick="event.stopPropagation();openVModal(&#39;return&#39;)"><span class="wb-icon">▶️</span> شاهد</button>
+          <span class="gh-title">الرجوع للحافلة — بعد الوداع</span><button class="watch-btn" onclick="event.stopPropagation();openVModal('return')"><span class="wb-icon">▶️</span> شاهد</button>
           <span class="gh-toggle">▾</span>
         </div>
         <div class="guide-body">
@@ -2864,6 +2964,14 @@
         </div>
       </div>
     
+            <a class="guide-folder-btn" href="https://drive.google.com/drive/folders/1pMHAeWn_V8iu8jk08w1-njqcIZ0rmUbZ" target="_blank">
+        <span class="gfb-icon">🗂️</span>
+        <span class="gfb-text">
+          <span class="gfb-title">لوحات إرشادية — يوم الوداع</span>
+          <span class="gfb-sub">اضغط لفتح المجلد في Google Drive</span>
+        </span>
+        <span class="gfb-arrow">↗</span>
+      </a>
       <div class="dua-section">
         <div class="dua-title">🤲 الأدعية — طواف الوداع والعودة</div>
         <div class="dua-item">
@@ -2894,7 +3002,7 @@
 </div>
 
 <!-- Scroll to top -->
-<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:&#39;smooth&#39;})" title="العودة للأعلى" class="visible">⇧</button>
+<button id="scrollTopBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="العودة للأعلى">&#8679;</button>
 
 <script>
   function toggle(header) {
@@ -3207,7 +3315,8 @@ function toggleGuide(el) {
       <button class="vid-modal-close" onclick="closeVModal()">✕</button>
     </div>
     <div class="vid-modal-body">
-      <video id="vmodal-player" controls="" playsinline="" webkit-playsinline="" preload="none" style="width:100%;max-height:70vh">
+      <video id="vmodal-player" controls playsinline webkit-playsinline
+             preload="none" style="width:100%;max-height:70vh">
       </video>
     </div>
   </div>
@@ -3349,17 +3458,18 @@ document.addEventListener('keydown', e => {
 
 <!-- Install App Button -->
 <div id="installAppWrap" style="position:fixed;bottom:80px;right:16px;z-index:9997;display:flex;flex-direction:column;align-items:flex-end;gap:6px">
-  <button onclick="document.getElementById(&#39;installAppWrap&#39;).style.display=&#39;none&#39;" style="background:rgba(0,0,0,0.4);border:none;color:rgba(255,255,255,0.7);border-radius:20px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:&#39;Cairo&#39;,sans-serif">
+  <button onclick="document.getElementById('installAppWrap').style.display='none'"
+    style="background:rgba(0,0,0,0.4);border:none;color:rgba(255,255,255,0.7);border-radius:20px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:'Cairo',sans-serif">
     إخفاء ✕
   </button>
-  <button id="installAppBtn" style="position:static;z-index:auto" onclick="document.getElementById(&#39;installModal&#39;).classList.add(&#39;show&#39;)">
+  <button id="installAppBtn" style="position:static;z-index:auto" onclick="document.getElementById('installModal').classList.add('show')">
   <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAABDnUlEQVR4nO29eZBlWXoX9vu+c+69b819q8zKWruq9+7pHrVGs0gzGg1CMzAIBTIGIWQMOMI4UAiHgzBEGOwgHMaECePQ4MBAyGBjsGWwIYwGIYnZND1Lz9IzvVRvVdW1Z+We7+Vb773nfJ//OO9lZdeSlVt1Tzfv19VZle/de+659/zud77zbYdmf/lTGGCA/YLf6w4M8P7GgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAh0UdMcnTHd+tot2iMJP2tfph9jInmDfnct8gKF3fCJ652e7aEd16+f+O3MYjewJAwm0f4R3/OzUbCUuoP/2xzZ6Zv4MgL2KgFKhGBk7Vq5OVkdxN8G2G1QLJSaarI72GnnwcmhAoAOAyBp+bGpa+mKIAFGZTkqVONm9FAhT3omRqdjaclycKA9h72MfGpkfnaokJVatRgn2y8K9XffBX+KDCQJUdSQpdjvtdpYSVFWJyHmf+/ZwnGCPypA6OTY8bZx2Op1996q52ajaxHpqtNp4V+ayAYH2icCNahRPlRMmCm97GLBj49XEhAe7q/ELBy22NsZaGOua1c7mPkY+KF6L7dpoAxN51JD03VGFBkr0PkHEUBmtlJ8aH1dAASJS1WKcPD07/tbK6tv1GhFhF4OoqgRsdJqv5p2KLTSpG5rac5eATP2ldF3b0i0zEb0LBBpIoH1CVQCsNDbJtybLFUPExEw0VKpMWsm922uDRMTWxlF0wI4JYO27JxcGBDoQml7jqPuZM/NeVbwT1YcnqtbVl9sdYDfS5xZUNSZj9aAjEhNH7+KwDgi0TyhAhFq7+Wa9+5FK9onTpwtJ4en5E790evjV66urnS52qQGF1lSJSJvddLW+v/lrWyOp1tr7bmSvGBBon1AFE6nqyw2dqhT+0nz83336Q792Mpl19Rc3o2anY3i3Q0hEIGKiuJ4tvHmplBT3bETqNwQgrmd+sV4uFPGu2KMHBNo/RMHAS9dv/v66bdRujC5/KfZv/qBd+d7yKgGyF/kDYLQ0tL60krc6JbLYuwknHD9arNRX1jbWNoy/1fIDxYBA+0ew/NRbzb/3wg8vTT9WSMrL4z/+jy5vLG1u8N5nEJv67mar0+nY9p4V8Fto5Xmr67LMb+7fmLQnDAh0MKgCeO7k6ZK6iIcuXd7k3AHQPeg/PeR5nmWZ9963utivDbDdaYdGisL7bmRPGBBo/2AiBT5y+vRff+7ozPI3uv7GT1Ze+9vPjjw1OyUK3uMk5PI8aMHtA1iioUpEeZ7Dyf4b2QsGBNoniEihY9Xh/+j00PIbv10ubpqoRbqs9R/8pSfGjoyOBQ1p99iSFmma7rtXXsV7T0S5O8A8uBcMCLRPMEEVj06OTvrrcdwVkBFWY1zUmeXrjw6VAdBepJAomJmZR0dG9t2r6aExImLmsbGxfTeyJwwItE94L9bYjx6p5M2bFikoJyULiiDdzat/4GgliWIvuhsGhcX2+NR4tVpVVRoqYu/e+N7xpbhSqRhjGuz20cg+MCDQfhAsN6WkMMtd61tsY1IDBJ3aENVPFWqTlRCVcf/WwuTVXa5vbGwAaFxd2ocZMBy/ubDSarWcc51ry/tYCe4DAwLtB4EVY6XSOHeZWhZKGhERiI2KsIuS+mhisAsZEFye1UKpdu5KmqZKlL29PEqFvUoPBRJj22/e6Ha7StS5sDiZVN8FETQg0P5hSUuROIJAiRQgYvKsDlFCLjG7a0UVQJTDNdphNBqNhjS7exr6cOgQF6SVkjFE1Gg05F0xBQ0ItH8Q4NRlZDz6tmPvlUXIWMccTEG7m0OcehEBoKpRFIH2ZsLpxdKDRERVmTmOY+J3Y3AHBDoAOFJTIR8ZJcARERORKIQ4MiPVKnalAxGAIY263a4xkTHUarWKbRmtDAWz0G46IqIAsnqz2+0aY4g0TVOqhYiA3TayPwwItB8E4XCjXntlJS0YSyYD5wQGGaNa0Lgu41dqLdxPABGg0PnyeON7FztpygAEbO3V77022ibsLh4tCJ9xLra+/3aa56SqXtny9e+/PiflXTaybwwItB+oKlTb3XbXFCJDqg3ijpAaby2sRvG3Fvj80hIAf2+fKgEKjBeqje9duHbjRpJEIkJEhqjV6Vz60vdGuaj386qGRqaKw5vfu7CythIaUVX12my3V7/12kRUvm8jB8GAQPuEMQzgQotQnO2KNRxBRVUyERqZfKtrRdXsaEgMWo6tdRcvXbPWQm4lBBaLxWazicVN3M+fFb7l9XZ9YaVQKPnchxa898VicXV1lRYb923kIBgQaJ8II/Licq1Wfarr55wfikAaq4vK5zePvbq2gd0N21qnoaoikue59945F040xkTFZJed8Spb1/Le9yLLVAHExcK+7m+3GBBonxBVw3xjbfVfXu/MHnuyvZmRmna7Y6P5f3PdXFpZM0y7CQkS7733WZYZY4Irg4harVar1bJml5YAGGbnXLfbBWCMMcYAaLVaWZYdPMh6ZwwItE8YIi9yYmr6iZGoVluOYgXDRFGjWfupueqZ6SNe7jOFhblmbubIY4899oUvfOHTn/70l7/85eeff/4zn/nMr//6r3/0ox+VXWguoZGoVHz66af/7t/9uz/zMz/zta997atf/epnPvOZL3zhCx/+8IcdHqxbfkCg/YABr3pscuovP/vQmdaL3dalpARRF1tbKtYep2/+tQ/Pf2j+hBc1915Ch7FvRHLi4Yd+7md/tlKpPPvss48//nixWPxDn/3sJz7xiYb1uJ8tu5dTJs0jJ+c/+wf/YLlcfvrpp5966qmhoaFf/MVffO4jz22YB+sUGxBozwiOsLHK8J9/4mR5/QWjy5XIi7JAvcKqj3Wt0Hrh156ZPTM941XvlZ8axr7eajTb7Xa77Zyr1+vdbldEmq1mu93OXL7LLmV5vtls1uv1PM/TNO12u1mWbdZqpMT9eh2Hc/N3YECgPYMJovrUVPUhc967hYiYFFDu+bWILVk2y8X8W3/47LBh3tkYRETO5ZVKJY7j4eHhQqFQKBRGR0ajKAq26V2BoKqhkSRJQiPVoSFjzF5yQ/aDQWbq3sBEXvTU1MwfP1p2tRdGilHuYqE2EwABhbHkMufN/PIfmBx5fu7Id6/dMEz3MgglcZJk8fPPP3/58uV/+k//qbX2woULv/elL7Xb7UqpXEe2c3/CaqtcKMZ59PvPP3/p0qXf/M3fJKKLFy9++UtfWtvYyNXv1TGyJ9Bg3/g9gQmi+NPPPPJHhxZc81wSm4wqIDXkiJRJ2IqRKAIL5Ymt/rPFR//hK5cZd1Flgw1wOLfNb765vLpqmdvtNoBisSjAUKUy+cmnNhJHO8qQ8O3Z4uTFf/vt1fV1BrY3MjI0NP7JJzeifOdGDvRAHkyzH0wET9fRicmfO+pbmxcSHhONYFrE/fhRUiJlZiBRJE47nzqix8bHBXcJkQ5SobnZqNfrSZIYY0ZGRkZGRqy1hUIhz/P6Zh27MyQ26pubm5tRFEVRNDo6Ojo6GkVRkiRZlmXd/QfI7gYDAu0BgQSjMWn3kkfqKVPEBENgQJmJiKBQVWFvSHLNZwoLT02VcW81VlWCBYio50sPR4pIYndrwjHGiAgzq+qWNTIg5t0ak/aHAYH2AlUARwtR5HKOrKNUyYsSVISTza5mOUhjZiLO1XoQw22cKRIT3Vn3LhBlZHgkSRIistZaa40x1trw68Tw/auM9b61nCQJMwcr4lZTxphqqYyBK+NHBKLKRCcqiWRtq0RgIiWQ7Ra9zoyf/lRUfjQXtQ6kRskTSHz3w5M0UhlSvZ0K4dfqzPj8/Hy32xYJRulgmO6Ojo5mFYvdrcBdJZmenu50WkGMBbgsq1arazbbZSP7w4BAuwURFEREk9azdAz1TCzGRJ3C5Pnkyb/9sv6bzWNamk9FRQhwFuSdHyu4qUoZdzxrUSXgytqieXimXCz7fn1MJbJs+fTUUrsO1Z1LdgZP+2JjzT46W0yKufc9bzwRgMpj8y2fPdD8wgGBdg8CMFIeGk2Mdw6wSobIpN00mjn15eXWV14993/84PXz2VGNjZiUNCKAobF0XZ7i3uugVepYa9X37M49i87MCHYnOXrejLFKtVp1zm2pUKVSKR+9Vf3zAWFAoN2CoADKUTxRgHfeMBPgvBZie26l873zb0dM7bT7O29v2krFqSM1ICVyKm2RoNXenULMJo5j70M9hF4MYSGKsLuxD/KlX9JKQkyIOMfM8oCtiBgQaK/IXNpNa5ENSxsC1FCx6wqNTsuLEiEDmBjKICIWIV9M9MjI3dXhMLwU24njc4E3ROTzvFgsOgZ2p/yGIxqaFcaHSIkMBU2oVKkUSsXDu/W744NjiX5wtrIeQoy8KiPfIoKHxFF07uoKERlCLsoAA0ZjQq4qJNaqmh3lSKvbtj5nZvQNjlEUsd3b8rubpaKOuVdTwVrbkjTvNPGAH8sHh0DvVnF2NazUk9xKJE7zkWqifVnBYFJm1b5nI1iGdvJqMZutJMCgAxER7TEMlYkM2xCbFmxRvOf6DvvBB2QKK0bx2al5vBvJvKLk+s9NGZqrOzE5gm0VpYwahnJfHdlFm6ro2Q+39irY68JJAe9vRW4ws0KJHvj4vu8JFMbHOiTL70ppbWVSISigRAATk8mDwkK9DokhJS+GmSLHCpL7ihPCrTTkoMHso2tsDPXhvVfsnYb7uOiDvsADRU/Uq2o7W3r14tTQaBjTd7cXslMGH70bFQ7uctl366LvbwKpqkBBxI3s2rVrZYoVkB0VjgfRi7v52v99wftViQ7K5nh5qGyTJMeNqy9t1Ovxjc2TR6Yy8ovNmhf/oHsQdJfwC9BfpgFQECkgIvKubHhyZ9fotn88OLxfCRT8mtPx0OrXX331woU0TWNrv/nbXy6VSh/72MdwauzGxsqDWNjT3eofbhfjug8F+P2M9yuBwlrlQmOJC9Jst0MAqDDyPL8x5JcfDHuAW8nudOsD6uR3kXbvgeR5L/A+1oGIKHP58JMnj87OOpcJRHN/5rmnGsUwjTwoBGNdYJIAURy9ubgEICTxEMGASI1Vw8QMIqZ9Fg5/P+B9TKBAkdW0MfPISQiY7cjISOnUTCdLH+hw9RbKoLDAIkC3VbILRecfnAB6T9Z0O+B9TKAAImp1u0pw3uV53k2778IVw/5gvaI8dzsAOHwZSP1d7rDffX0fBN7HBOpF9FWGfK1VKZWfePyxRqPhurvNpdo3VMLii8LTI8IddkIC9RZoqnrAh7xlzA67klWLZfS3l7td0L0Xyvv7VYneQtrpFk302Od/KpoZ+fjYWNr1KEBVH5za0XdUPXgjL5GIbl1obmxq1EXp5eW5kZF0NFns1DpZCvSKiwf9K6wB9+pHOwje9wSybMY+9uibjUWstKcfHp0w5Ru168T8ADOhbnd07jha+xpKIgJEVEGYHp0oe07q+erX33xpYXF1dVVVjx49OnF6/tjDR9sxrq0vaTAf7MsBckC8jwkUKLLRbW50mwAIWGpsLGG3dVX2BwLIsxLCJMWqpKzv3FsyaEAKZu0XJN+LuAqdT4qFM6X5QlvS8yuX33hreXnZOZcUi9Vqtd3tXl9YuHr16vjL4/Pz848/capepgZSF28YY1RvGareBYvU+5JAQYXcChamvn7Q0zEfsIKpcIBsC0CS2/gRBpD6k919i132559et40xzWZz+mpj9Y3LN2/erNfrSbEYJVGSJCHw3mUZM5skWtvYWFtb45dfnpycfOjpx6+tNbz3EUeBwr314AOWSg+EQPdSEA5LcdiijmFSvfVrCKg5jCvcEyFcXaF861buEDAKZqKQFE/3LFZPvYlKcue2uh2qtNbr9Re++CXvfbFcHhoa2orxoL6W45wjT0wEZjCWVpaXfneJma21Iv1EM6ZeeQYF7Xr3u73igazC7tXTA95BeMjFpDA/NnlichqAFxVVQ3valOKAUFJSBkGJlAi44+oSKEUCgEhAt4uorQW5qIJobnxKRbZCOEKd3kKpUC6XIdLLsuiHm20XV+Fz9cqgMHllWdbpdNrtdqfTcZ1sfmQqXC8UdXwQi//Dl0CJjUZK1aXNdaJ3xLio6uzIxFprM83vUzDg3iBAC1H8Kz/20acnzUsLKz9cXruy2Xr12lUAOxQweBBQgPqr+R0dt0wwphdhQkwQkZBzU4iT46PTutHOX1q88PrFKIrU90WpquS7j0fD9mjGEJTIzBtLKxNfOff40w+78cKab69u1qRvQ9LDU48Ok0BhhipRNNk2S3iHWSJ0d6RFtQOMcZDhG83NL3z99/76zz7z6Yf8Hzo1tN6d/5++E71Za1xbWWaCYs+yemsBvJdTgugJtb11qFgGNnSbThb6C1IIRLSdZgR474P5enZsckjiZL278O9eunr1arvdLhQKIT15u4DZk9F5O4fCryJy7ty5c+fOzc7OHn/49MzZo50SXVxZ6M34h6QsHrIEIsCksvT6W9UPz7XSDvXT54ioHBcWv/smHp3gOFjZ9sMkVTVMm53O//bDq0d/anqG3x7P8Dc+PP5G9/Q/Ojf09fMXAKU9siE8710frFvhxkRqwd7pmelpnLven4HApAolVYXACCAEUiCJk2PDk6h32i9eO3/lxtraWuayUqlSKpXCeG9nzL5dFltVWhECW0kXFhcXFhYq360cP3788acfzsaSNd9eb9T31/5tOEwChUGI2u7y1evHP3yioe2tz1W1KOb6wsL4iWGJDpTu70UN8ytXrv+D7yf/7afmufua6sYRXP8vf/yx8cJj//bNi90s3SWHQsr6sfGZVtZZa9R3dxbd0iSot9px/l5TGAW5oIpRLh1p0NL3Xr5y5Uq3242SJC7EiSbeew+E4gq7fQS7hqqqKBGMtZ00Pff6a+fOnZuZmTn1xCPVo8PL3O3m2QHnssNRoomoEMWzI5NPTZ/Irq1tbGyM1eTJ2VMzI+ORsUOlytmp+Wrdr62t2YXNx6aOjVWHD3I5L2KYvvzaxb//UpSVH+ugjDjNG9/+C2eyX/vYs4U4gcrux2M4M1WNsWubn/RcYYAIRNBLI74dCoDEEJzLO/DrF65953e+euHyJTBXKpUkisRJkDoP1D+6laiq3ls2NraLy8vf/HdfrX/n/FixqrqrHc12wCFIoPAeT0QVfeHyS9ev37x50xjzjS/+u5mZmeOPnDn64Yea33v78lvfWFxcBHDhlTeaK7XJI9OzT84tdDbuWrZiNxBRgv7z7507W/rQx0eqRmpDcb7ZePunhrpLT5/9x999hfQ+0YDhyRrmyy+e46khHjHbyyvf8yyQZ4ZXIiUoEWhrDHoRiarUs0oRiUCSOJqsVpz6pBixY/Xeex8q+u7jxveHcFPee3gYZjGU5mn5MHh7CPcQGLCSbq661s2lJbZWVTNxly5d2ij6Vxcubdjs8uXLnTwF4MRdu3GdiDQxOMBaQAEibqfd/+W7b27IfK7e5Uk5pubmlc8d6fzChx4H8X0LxYtqtVDavLrEG+1Qqfv+/aFgxlRgyy9/R9fIEwuxEhErWOFFmMk76Z/0bmwFd1dsrfzvbZ/aGw5pCgNS74aeOTUzNSUiYPg0f/YnP+qnK90sxbHRh59+XHPPzCJydHau8tzpm7XVA9oVw14C12obf/+19UJpjlLvfVosZ531H/ypE9HZ6SNe7mn5IKKRcvX05NxkHtc2a+uXbj45cXx+fLpSLN53QtHtQcc7HaW9pZQS9bYT2+edHiIOfbo8HAKFhcxK1qycmSVVtrZardKJ8fVGnRRLmxvR2ZlCoUDGkNLww/Nvbdw8FEOEqhL0xZtr15snyBYUhByjltKVl/7sU3NDpUpvFO9AbKOTrcLyv/ney//qK3marywtvfybv9v5yuvHeeT+akHf2bR12PYbIbAi5BptHUHa78YBbzos1n6kwq4PbxomssYWopgMiSoRbbabvW8A5x0zC4MMtf2+DYm3QxRMtFyr/e8v13xyTHzOksCXjFs/Yc/99Omj4YDbewqkeXYlr129erXe2AyjsrSyvLa2djPb3Ec3ErtNlSSgn2b6YPCjQp2Aw9XjtLlaj238yOkz7Xa7RBGC/g8UxLTb7eNH5tSraWaH6PIMLb24vLLoxhSWBfAWMa0vXfmTZ8Y/dOr0naW+g7ysJ/6pT3+MFGAoUSFO5n/62fW8dd+JtedE6MeLWctX1zewbYbiW8bMwKY7RZoAXm9Zn/S2P6rBHxKalOCvJVWGAJaZiExone++BAxfBj1/60HdCoI7RBxmc8UoKXp84hd+7ujnPvLkM0+jmQI9Mb6+tPLkM8+c/CMfe+YznzCNLCzjD4VBYa210dz8rcudpDSX+yaoTTCRLdH65U/MTQG90j7bQUReROaGpqenvVf1/uTp0/no/XfH6UcCKkFAKlBr+Wathm1hpozeOj8cqyQAKcJ0GpZqTGIDVbY8Y/3WBQAIVoPfnwWklohhDQPiXC4CYiVmMAtBtz3IvpdCVXXb7E196mjfCnForoxDU6IBGKVHPvPR61X36uIlevbYw48+TETEbJgfeuRhfXbujbUb7ePVh3/6x/Puoc1iW9d//vLSRjqmxnruqtiITbv29lHdKCUFf0d9woB2t+u9Z8NgysV1Qjz1LkQjE9PO1U/pjnYUYUWmqqRghVEyChWCMsAiABlWWIDFsXpDSuokT/NWs71R76xvxD47NmnHShF5Ee/Fe1UhVQMiIu4Ve6Xerj/MrBGrhRqoZYqJmMDQw6zbejiW6EDmetZ+Ye1tAAQstjbW0kbP/CDyWroMgInqndaLWbe3weyhXDt4SwjrrebLm9FzxbJmHULOxKLuiNROj429uniTCf6O6yVsa5u1o0dmNzc319bXp+X0fa9F/cU7sRKUlbz3R0aGgbXbyoERAGWQBumD3qStJEJQz6JEpFaVw1dsmASqpuNS9R7qWNsVq8MjxfnZybOnjzx0cmh2drRaTZZWGhferL91fu3qjY2l1Wa91W47cQoImJgZNoqc99xz8RqBCBgw0AKQ9WfOvYW53QuH6srYXuEGyLdVKwbQ84sR3dvwv38wUeby1xr5c2PTbnOZTCoSiXKU1x4ZmX3l5t0Ftmt2zpw+M/2pp7PN5saLF1l6t7HDhfrTjjBReAvy3M+PDQPYlpKvUBUBM+HWaoy9WAWxemXnLRRsBaxhh8o8T7ss3lBcLuPoseT0yfEnzkw9frw8f2xyamJ4dKwgWX29ttzYXBomOlau/PjD5Ubr2GbTrTfaN1c2r95sXb/ZXFxrbDSzzKdhIizAEIswMzt1BmoVQkZxeCNw+OEcPW/wNs9w7/P+tw/CjBbae3O1idNHIK8yK3lrQa3mjQ+Pz351eGSlXrszvCQqJqWPP/p67QaAxz7+xHLa2MMV+/8gosz1FJdtrzQRCcj3E8dUiZUtkQpyhVIqnCs0Z+G4KGPD9tj48InjE4+dGT1zvDI/W5wYhrE5m67RmqclX7Pd1EqrhbZoy7lmyzeySGm6khydMD/28BBFM5lP6pu6sJhfvLJy6fry5cXN6+tpx3nAw4ORMmeGjBITGSJ7KFroAwxpvRdLHoQNQ1QJ+sbC9W8sVH6yXO10G6TMEKB9hLvTpcpKvbZ9FgvW8zWT3Wy1wkLutdZibCPsYgkWCjhBiZlUiZneucoT6gWTKlSIoRpK0Dsv7TTNGGlseDKOjxwpzB0ZPnl8am5u+OhsYWYoHq6ibNpG1yKkts7OJmlsIxuzTTg2NnbUYTKGbWysZ47Q7Xr1BE+uE9l6uUDTk6XH5pPPfGwadLLe6VxbT69ebb9xYePC5cbCan1lrZtCFAyQ4WhrJ6iDjMj7Mib6rmBmL/rthdpPnB3tSoPIKtqASTc3jpZnX73bKZnLCdhaCO9+f64++l7Vd2DLUh32gSJmw4bLkQ6P+PGJ6aMz5ROzM8cmeHoS5VIn4i5rM+Ju5FNX7zZsZGMtJeyiGBGT8TBOrKhh1VRZBCpgD4B7gQGkRaPWosveZWlXfDOy62Si6VJ04jTZs0Xz2ce7mb25mZ9fbr75Vv2t8+uvvbUUa6ebZTjw+/xuE4jCfscKt+sclN1G0CkALHalEw0rSH2svEkUaav2xMjcv73HDtx3ftQLVd73Y1VSGGwlG6oRdaTy6Q+f/dQnZ5MilUzXmgzaNUL5ZmqMslGOupwwGS1QZKCgXAgMT+pFSDwbqmpORk3Eaigl9V4zUcdqFRkoJ/WkQsREBYYheM0lc7nn1EQbpbJ5ZLLw2PER81PHMz29spavu9N/49tLK606HyyS890jEBOpioKc30OiAO3aXR8Oq6dpIx0aInTgCSTGSLc7a7KxyvB6s74b79vObgICbC/kj0CiwaTSO7P3g4L1R0GGiFREDJtjY5Uhv5B3GkKpt0bjgsAWDDMME+UQEoI41tyQwOeMhEhtVKJ40hQKcTLW6biVemdptQYpcGziakfNphEyEQgdryBlFSWRPNaEnULS2BqTx5G2nStqFjXSrA1TLI6Xo/npx/g7P2KrsHuBiPol+2lyePTHTs5KLl8//3b7fpFfIdjjsbmjtVZrobax88Hhi7XG5vXG2NM27iCHMMg4ykuSVZJovQmindZYof2xytDc0OirN6/e/VqEqGeYpK3LvtMX1ktbDVFDDBCxAM57n+fgSI01LCpONROFGvJaRGRh07hY9MUyTFRIyo5sw2lj3ayvFG6sNy9f++G1661L1zdu3lwrJvHkxGh1NJ4eKR0fKY9Mx2ND49WiRomYCJHmYjLWlH3mxLF0rKGYCuwLKBiy3muqkjvXmBje2kboR1gCGWYvAuCJY8d+7uzRM4X07Eg7N9NvLq9fXlnaoe+G2Ks8NDvzj3/583/hn/zWQm3jrrac7WCCF7nU1GcmStrqGAVEVXP27fHi8NU+lXfoqvP+P/34hzdu1l9ZuBL2lrsT1Df9EsB3bawXsEtQZhUwgThiy0JeE8/eRRJbiaKCKZYjIznQYGq27cZSttTorKysL69idaO1VktX19LmaruVUka5WOE4cY7y5bpeqwtQYC4xJcPRSLU8PlycnIonJ+zpkfLUXHF6uDQ+MlSsliviIsqMbTolJetFCV41Y5NNDlV2epq7wwMkUAh78SJTw2N/4tmHPznuI3fVtpf8Ws1VzqrspLESEUgrheIvPXlMN142u0uPC/y4utmhqRKkqUpQiHiRdLpS2vlcQ+S8/7mnH38yWvi/lldwy3n0TmzzcQXXhGGsNZoIboReBAf6ejSDhEhyn2+mabFaEUTecM1lkkpjzW2st9ZWs8Xa6tW1ZrriN9tp3WVpBs8FSOLFUpyXDMiOKXWcNmzuI9EcZMAEysXVxfo13FxrAw0gA2iEyZZoqppMTpVmj1Qenh4+Pjd09Njo+ERprFisVDUyuUs7xow3O/vxHN+GB0WgXooJ8NGHTv8HJ8afKp1P168WChQnuVKbTG52jMczTM7LZx8/89kTzULeoPttHbodOVuYEokIkSrIKHwr6zSAe4o7IvKqHzn70M/PFlavfe3ZY0//7nqrc+8ZVoPDixhQFZmolIF3+qT6RiGFGqbc568urA9zfv7GjfVGvlJrrm+2W63cd+AkzinOTDosQ6qFTJuRLxhJrfGUpFrUQhzZdv30ifHnHj81UsbISLy2kl2+0fj2K+tPn5r6/XNvk5e8k3c8ebDC1Aho0WrT4WYdL62WgILhQsVMTSRHZ4aOzgyfOFE9cWz65KnC5cUrAPRguVAPhEDhuY6Uh37lY0/+gcnMLL4YNxeGig5h9xESh512EzZEzsszR4/9mbNV332hVB3epcUrDPZqJ+3kHAEpVABSYs9Zek+BFzStyeHR//qTj1/4xv9dts2OuW88RkjsCZZ3tub2l4G2aRbeaxJF337r5qsvXuyCnRfENnVECkveqILTQgFZcz0uFp8+NjZbkiMzw9Oz9tTp2XOXR68vn3/2+Nzljey/+ctPr1250Gx1pVv5wcUpteX/6s9/6K/8HX320fFy3F1c7awut9c7/o3FDrv2WlPam14EGdD1InVeq8srFxcUCwkQMR55/K3s44/gIOtNAA+CQOHRqdJ/9olnPzmy0rj5/RFbZxtlzNxPx6O7OMh7YIKoHB2f/KufPDnMb5SonmpVEe/y4oDmKo4EosRG4QALx3pv432QFp9/7MSNF38vcs0ovkeUfB8KJfWAAYmoWmvfurYCbG10QYBqWKCRqCqMElHqxHvVSCNr0tTNjRVnhoYnhjA2khw5Pfr9lxqPP1y9eLH2xz//3CeeyFm6NmqPz5Rv/q+N6tHko0+Pvvr/XFm+vpA3Gu26816Wl1rlYjYcXT09Pz5TdI+eStyZijFRdXT0f/xnl//wTx35xosXc18+NeMWrm2u1fPXbsjlG8vWFrNumuboiFxZ3Zze3TPdGYdPIAa84uefePQjleuriz+cKqUR57nGSkVDuYUwcrqjNtIWVFVBv/DI1FzhjUga5AEb6S5FUOhAL1whVIgXCAECujthmcirfPTUqU9Ua+3ri+WkFwlx7+ZJocEyFTrLzJudLrY09LCI73tuABAjz/2RyfIznzwaj4y++ubKeNkXk4lf+oVHR2gtiSCl4s23L/+JP3j26y8sL164UHy00mm2hOCSNOu0LRfh2swZ2NpC1aYekiVWy0ywFZ81fNrJ2wXJaibmdl5nlz4879qN8nq9+Ct/NE5bo3H1+N/8B6//kc89dO7NpcfOHB0fbl+8VHd2+LvcK5B1EBl0yAQK+cU/efbkf/KEaS++OlPoGFUly9o1khBllhAKotz1dCaI0s+cOfGLD63HssCiaiA7znd3gzKTB6kGCyQUShRE0DvaYSKFnpk9+kunhlvXvpIYASKC7rDNVgi1YWPC3kx3zefaXj6ImEWEQJ944uQfm5h4cyHrtvK/9Oce+fUvfG+z8fpkJfcNbqVDTtqcrVRHaKkNKcKYJOI4Lk9MH8PFhfVat5hHZS2evH79/Np6SzQpVKur65dfuTa8tHr5J587gqgdJ3FiDKGQyoLkEpmovbmZrrm002l1UVtf/TO/+FSBdX6S/vTnjy80m6WJZ//UP7l4c3ODiHGA0uyHSSBD5EXPzMz+xaeHaze/NhoTiWdbyrwpcZc1VXIhRu6u4xPI9+js7F/9+FxZvpNIRhrl3gB+b24/hap6iLCoKCkLqd49Q0NV8dxYIW7+ULhjUYLGhK7Zga8EgiiUSAhgUJ5nZ6YncWlV+olEirCdjw9mRfEUWTtRMmlrbX2xO1yUoVLzyFSx3fF2fBQFN1KYstEmmZFme6PLhYu18vrGZrfZbTeXXrocffP7b5575e1z17PzF26uLq42mqkCI0ND9Xr3hVcuJoXK6LdptGJHq6VqxRyfGe3qcrM7dXWhOT53rDTufLMOExfLBc5Xhqpxp95or8X1dDEZO3bmyOQPL109YGToYRJIVA3z545Pl1d/wKjHOkI2boI7m8XCsCilBAbJzmQwmifxBe6sW4qFDSRE2e0NqpAge/pJ1Hd1WYhqMU4mUW83L5e5yAJlB/gdekjAbY2JSrVUwPZVWJgSqP8/MaC5ibkwYQvNKNsgorrXCzcKeV3X6mk7v/nq+fXf/Wrz+29c+/7F1X/9O77W6aRt8g5t48D2jU7kC3JpaTmJis5xp5Ne3Vg2YEFkeP2ta0sAYkYc0/RQsS7x31lrLNSac6dnVhbMyFA8c4SXlrs+Ora+cWV+aoRH5kudYnV4Ls0X9/pg78ShESjIj08+fPJzc+vpykY1plxz4rhNI6XKtOo5mFAw+T4F/Igk4YYzPtMio9tXTPfKoV7kXyhrssNx1ti5QlTuRAxLIKU8bMS8Q7v9yj+3INtWwhrsiD1TEBGpsZSL+8pLF65tLF+43Bweis9fH/r+y2tXrm8UFB2kqSc2o7/+f/5+RraFZKXmyJYtChSDuA0DKyOwNSooxBkSysjAisAyCDYnA3VdlU4X9W7Hkv/d1ctM9qXLy78FREBiTSZ27tT0iz+4LJJ+7btvVyrxqUfxwzUPYH87A916gAc5eQtEEFVr7B+aN531b5c5Fi2TNWnGOvOhiXioc/WFKErQm7441M65K1gRaaFDCSJT8IZEFUb2WGdLezMlM8hB+N5ajUK9L7AOgXPglti4d9PBEs1QAZESkjh5/dIiANN32zExQYiEyQhAKobo7Wvrb75804HKy/Jf/I1/ubTmXFx0ork13njjpcEWGkfirSWCBXVUbSRWNRNKWQ3yhGBEGLIpUIiIOO1VNkdv8UCkCjGxKJgLyi5XZKIE9/f+yfOGYq/uu6+tADgxtzr28x/BfeLn7o/DiYlmIlV8+OjsycJN9RmMz9kT+3pOc6c+501B1BG4NwHsbLlSxN5Y6oLaABH2VbU7FNFQubs1+c6j4RUOtEdlCwBARGm+zch0y03W/0BVocZGUXEsLlU9RUvL0CgSysCpkiDks0GBlKAKFg12iIygrFY4EyXShGD7wpiUIL38atEwXSNsXqSiIipeFF5JlGEIFEURW4psEicJMxfKQ2bnsO7d4XAIFGT4c2Nx3F1LbMnFubNp7mDLD03PP+2ZRBkwobb7zjY6Uop8bIQYue5j5ur9parobaB+/7M8KAe5fe/a9M4dyt4ZGd3fL0xEM+lm2hLjTVJWLrFWjFrji8ZXWYvsSywRYBCiQdQAQqoskVKupP1O+p6Nm279uf0pqA8vDymTGu3l77OqV4j3LKK5l0OJ7Du04gonJ6Z+asK7bq1oLHK1Fq08qcw/WyiUchG1FuyD/ZZASnyvkVVCapRcxBIzVKz2luN7QS91kxhKglBk7p7kCEnsQqTwBNZQN+FeBxMRgyAgBhE0DOq2/hGIe+kPBPLETAw1CmXjPciLF8pUjAUJxURsAFIyABCBPEhBHmDVSJkVQmpDywh5dip4h5Tbtkgg0X4wwK0obSVAnAvM88HSS7SHAiY74BAkUOjGo2OlEbuoyJTEgFnjli+OHn0UiEUNgbYt3nVnTUMJJOD7HLUjNKjQvUX17s7hravtfdm3c2d6P0nBYILtW+9CYJSGPEOQ31ZNUftdQs/zBvTTu3Z5vQDpNX5IORh34hAIFFI/HxtzPr9R5KEgF71jW50dOXJWQcrRVnJLwH25T+/4a8/ouTG1L4p2hVsEcg+mNC71asgb9POftxWGkf6fbcfTrX8cQFrog2MPDk6g8I4PV4bOVlq5rrIwmMRqy1F57ExcmvFgFd8rKghShYfsYOpFOCzEpFM/wG+3T29LhITKKuhtbLHzJKgSlgEEdaKFJHp9eamTpXy34ETt+cIYwWMBom3Mu9WDvqNDiULF3/6Ud2c/BNiVptZrf7fPQvt0pF2Lrv3goARiJgAPDVfHo9QLkfbWI5kk5fGzakoENaThJdpNgwTwHc7tPYOI+Ja2vvu9I4jIWhM2PL7HIb2ZlTioc6Adq9NtsZ9uBTB+oHDQoQp5Xs8dKUd5DVKF8eFDjivVsbMGbCBQ2Rv/D/qUKZRd7ldhoftYL2nrqF5Jw/tu20vB6hL+u5+h4C67+XyAcNCdiERRSgpPjsdod5mKjh2xEJFG5aQ6ARXAMJGSCG33wd/zukH0QyAM9Lyue15wKkHUk4TANhLoXRa77zhBQxR8xORFqknB8N3rXuiWghV+I1JW/w5jrlIvMyNMWn1h9qNQXuoB4BCUaFXttpZjqyAnzID1OUx5pjI8pd71L0NKhC27Be2s1in1zaqEXimTPUGUoCFeJyhebsfDFRRqxhORzbL84emxQpzoXUsyEMTIdpVKRYrxOzMS6ZbUE8C9Z/Xs3g0cTAIBAMYqlalS5iU3JGKIYNSzKc+YqKL9aigGpBwspz0vxj1fSN16Y8NuAbSfTgYCQVUUYIXfyUhI2ivA08v5hfPuLmNOvR+eoX1vmAGnWf7IzAz6oX29cLn+CUpwBLn14QcNB5RACkBdbpEC3CtLCnHKpeoEhQcNELRn+yKwbkX33OOBEhGBpbeZid7p/t4FBAJxotorn3OHe+Ed96CAGquMnu/D3H1/nf6kBTVBpigRQqr/OzuoPS4SSElBMAg16/ewhnrf4KA6EIDRYhJbhMEyCkvilZPyFHBPT10oiHq/1vffMYVudzLvvBcL3aHl3qdnO5bZ7xnbw4H3iwX4AOAQdKBSzAl7D6HebKXKEUejwHab7m1DeN/HGnSgfTpSGWTMLS/N/dq5LcL2HvrZllmPyfTVsrs3uu3ID6ruvIVDIFCepuLaCFqGQiRXNlFUBYDeLoyGyDJEoMKEYCe85wwGIRVLffOJAfOeaEQgUqOq8KG6Lgi8g3vCEDMTmARQJt0xHgh9qxwTMUKc490O3lolbK+D+EHEwQikACDimUFMPdWV2UNtkoSYQAYE3qtTCEk/J0Nlp9ktxFf0Ft4+RCfsvlMCFajAARkpkyrA9zLtqKrfqphJIHEcqlne+549fO/43hJd6d6H996DDyh7cHgBZUSKUCpHSdhEZIyXHKpQL+SsAasQcb9gl4JgmLe7KZgIDGtYSRSOqQBkROTVlwphDz7gLtrMLUMeg4i0GMWgTNUrlCRSykQLBVsx3AwOiF6fQUpaLZYjJlFlMEgNqaFMucMcCt1v5X8RhX2ASIU9pLcmIGIQ3RHhdGsSVMA8mI1UfkRwCARSwIW0GVJn1JBEPjIcRxx560Hs2BhbMWirgki9WnDUyTvvtL/BQwF0vYdl6ZKqCdmtxIXHjg0/f2nx3qld2m+h9wtTOSNEaqAJsTfWWENe7rIv3Ga76X1MxKpMyMkwUwESNTvt7S1vOck7XccYVlgmZUBZYG5bhSmRV/Lac/8F+tCWTfEDRqWDEagXeWIIhrlXaEBJraaoX+8WRnMvUeLIb4IYPd3CWDLWNZ84MjY3Ug355NKLwSEBPT5Z9J0VQ0NQBYyhyLe7x8szz504iV6xA71tXiAKGYtgJhE9MznB+XUFBKokTEgba88d/YlGVFQJi3oNZ6nocKUwUd70Ky4uMOBFoywvHx0r/+yTT9Wa9d4d9uxSojCTlWKClvNcMLublvQ+9WLe7zgECWSsNcYKPIGgDOVYu+e+8Q8Qjyq1PbRkr02X10UsK0AUk8m6S3/tQ1PMI+D2Vvy5gpWtT9ep00mKpZybBGuZXFZ7rrr+iZ8+LllLJBjsRMSLI++9iIMaFXiBClKPbt5pXL0eG8pBqhIZZi9Hm+f/4vHjIt5GJKTCpBSROkONxuL5JFbAE3vlVEwmmz/4sw89m2gcqwFsb460HWHjfMPV3qhEwkr3yk/ahrDnwY5mqPc5DiMikQ2xIfKGAE2Mi6IoG+erxNfIdEkKhSQ3wuRIOQSj+1KUptkr0AiUEntmQ8y9elBRVOKuB6nxhERAUZyO4GbaXlHX0TyXXJ1DnmfOOZfDZRB1Wa7incu1IyZ3UYnbSik0kQheJSLb2bjaXL9sSIk8EcQagiH2ln01TmAjkCNiImWbG9fcuPH1oqYFIUIcKStZjZ0wEfNw0iQl5UhA2kuZ7tV37fGEQyhAqN3LwYmzlahxEMtQ2JXh4EN2iDgUJZrQi+HV/kPMC1E70owQEat1zDrsOVPyISFPSZEIkye11vRcR0wkxjM1kMNFRshCFCRKWWKbXCjkaZHBOUOjXGMgK6gVjRzEGCfkCpJrIlmUdzRPSWAcw4Y6lxxFlNiECCCxkIjYsjGixN6HONBePVUCirHSeGQjJEZUWUFsQLFVYvYg6y0RHBnQHqMMPog4DAJRL00TAEhIGVpx2ra+QBoJJRK3lHJhH6LPQPDsxbShFhSJyRlMwUPAiMQ4jj2JaqSkIFaJMjU5NOW2EAtUlLxA4ATqIF7Fi3hRr6TewpH6CvmMfUFMpsS9bUx9cKawp1AYwQlYyMAosdoQmUGAWqNepes4UgbIhwpRYYYWiOPelmHUj6fb2dH/QAMC33McBoF69npSgJVBLGzgKw5kSGFdZpQpsxqDFMRCDPIcjHbkKdQbDRqyZ6CQMsIK3LNXhpcY3pB3VjqiIiFbxcOJg1c4gVdx6nJ1jlIPJ1bhIVHgDYGFyZAnTZkMKTFA7B1LkHvBYCzKpKxMSs6xKqtyJkpMzPAgycBqxJBXUgsOq3ohC6jyVsxy+Iv6dsuwt3xQoxWg3WWJvJ9wWFsdkBIZ1mDsYcpYYSFkMxBYwESexcIQ1JOPFPAEowylYBkiijwAEnbMFPZ6NsICghdSL6qsFiIQBUR79kKQikIUUPJKIDVARyFKLADDAaSGlaQ3rgRhZVYwh60FQcxKgGEhJjWUM6vCQMmEwFD2vdW4Og57WxBgGGDAEeXvnMpCjej7hZl9UHAoBFKlVEym7I1wpLlRr2Qs1IiQklFmcjkJ2DJgtLdthPWOiUOWTG8fEkIklsCqUPbE1nhlL7m6UInEsWRGnJInEqgjcSxe1TNyVs/iTS4KeFL2QAYFlJVFSUVJoUwKJiUhFiYoEDuJwES54ZD4CRYD64iISUBQ9RZgz6F4OZFjciAGQ+BiH1ls92hoz+6ID2wQ2XYcyhTG8DELsWNF1DXMBDHCLAbWMDN7Yla2DEsUNjMXkGbce7ENsQllzZgBZmLlqBfmbsQLO29yUeehTjkT9oC3yEF5pl4hpOLVefVecohTERIQ9fKnOESts1pWYkjQrEg15G95Uk9kGT5kQrMnQxFtRWcrqTgrIb6QiJljQIiVQxEHsn3/S1/q9HSeMFsqYz/1Id4vOBRLtDITyEakqjYLa1gWsIKMGmIWAwgb7YWYEnFERA4S6NJ7VZnUsDhiYkO2l0dFXoLjQJWdwsMIoD73rKLMkVF4l0Nh2KgSsZJRQEjIkGEFERPBklo1KmqYLRuQhBU4AWpZCEJElomg3CtKxAQfInuYyBhiJlKQejgmZsOk5JRLpfKrb4a9iFiCrnN7Fs797UXvXxwCgYi0rXkKjtUXM8B5YrI5gZlBZFiJlDXMByEHlI1hY0h8L5SdKGcwCMaoJxirZIiJDEQgmfjc5yqp97mHU/Iu9w5OkOXOOXXeZS4VB+/FOTjx3iuESWBALExeiUAUAQr17DRKbNDaiWA9xWSE4TMQOwCG2BkXfPSAEothhF26aWs3OSbP7DTOI9tMc7xT5Qn7Z+w6p/F9jEMgUDdHceRJG7VhwUKJEpiUhSn4SokouBSIYIM1DUzKJOrRt7opVEJOMJOQkVCvQQXM3jjEHKzP5GDFkBcWMeIiUfFQkHPeuZAMD/FehKAGGlaEyr0UMSYiNgpD/SrgQhAGihrWTYRe1bew8asyGeKwUIOomJ5PVYl7JVrZp6Wx6UKxBqxuuV2VCMSAP1jxuHtia1utB9D2nnEgAoU9Ft5YXf2b367GJnHe953lIUV3yz4bvOgKeUe13n4xlG0Pgvtnb/9EgF49mFuxxgDAanrZgwRsRXhxqDXTP1+39WTrQvTOb7f+HWJu+7cg2zsAwPSVHOm3oAKbRI03VtaxlX0BVoFX4Z4jrXfBQ5FGtzLdfjTYg0ORQM7733/rwsHbeb8jEEQUIhFsJJRxMG8cnhnxR9Atezh2IMvce922fu4SChCcFyKYXhngXZ0lqqJKqsaaW9fFlmi4y0lefEhkCxPlO661/dztn6D3ufNi+tKVtvIz+v0PWYzhlKVG5nzBOLHGCmlf9n5gszIOh0C737vpNhCRilYLJYG2up09nVuMEyJqp126S0jXXVCIC867meHR5XrN+Z0zxW5HuVDsZmk/gGmHWEo0c661i1Ocky9Q9CMz0zwwHPIu4ntFeL5Houq4JrhNH7oXVInobDLxTHzkqB0GoHJrZ3imd+wfyP38GgDTLpmh8glfnSuMAAhbHG9v+K7nhn/Pt5PhqHSMh8ZchHtIyVAxYq3duNg0cVJQE8ztpLRtH/kPHKPeSwJt7USxemWhfWMtpKbf9wGHs+JC0jF+M20BQKjBARB6U9vWwdJL9VIAteW1TqN59dIVqyDAi8g7PVN3PTcIluVL18S59sZmq97coW9M6Obpt1dTF4/n5HQrKe2Di/eSQL0yYkSda6uty4vWmN2nUS1IE+PlRdcEENno2OhU2Njw9PTRExNH0BdmJyZnH587NVKuAjDWEHEcxwAUODs9f2JyVrdJhRMTR85Oz29d4uz0sZOTs8HGScYAYMNsdkzYIALwyhpdac15iYkK+kH3i703BAoPeqI6fGLiyJGoun59cW1x5eHKzPHxmZmRcdxb1BORAqWkMFvjK//v88+UZg1zQc38KkU2OlIZdS+8rS9cPjM6K6rz1YnoxRs3v/id024IgPdeEQpR4khlrPP8W/qdS/PDk0EKPhSP0XevynevHE9GATxRmJbvXk5eWpwyZfRtyfdltxclwsvXb7y+Oe5o1Kk14olsOFnvKHf1Llh07ly4He7l3iMJpGqY57Ji52tvXPviC7VarV6vv/TPf6/91dfPuqFwwL1OBFDsIl+s/fKf+ZX6a1dH47IX/9rb5513uLrx1ONP/sRP/ETthxcMc/ft5dOnT//qf/5rN37w+vTwuBCYuOOyzW4re3Phox//+KMPP5pdWOxtXqyUnDlSHzHyxqI1ttPt5vNDq0WXv7lomKXnAL6/fAxrtd++0TQTH+10i5mL2pyAPYijODLGqKr3fmtc34WVOfXBzGFvBmZmezhD/57t2uxFruX1xWvXVtfXQwDo8tpKu9u2zx7f4SxVBVF7ZePnf+FP/sd/7s8tXF/47as/SMYqJjLDparWlv7K//xXxsfHv/u5z9HQaOvylV/91V89+8gj3/j6N77fXCLDqiCmsbjczGv/w9/6W9euXftjf/I/rByb2uy03vYbXqQyXSo3fBH2IuogTMyOTLaYShWh3W4p7wVE9PXXLvz3celPn/qxyXjJJcMRN1yaNtc3TBQRkbXWREZVQxzIlmR6EKJoO13y3KsqvAeg/nAcLe8NgYJIX5fO6Z95rvX/fbWbZSAqRPHHf/7nXs5XQtWqHU7P83xqYgrAxNgYXVEiVkWadUuWAVhrC4XCSqulTJcuXXrksUc21tZo2ooXQGMbsdfKUK9yiIlMmmUIE5xqnmY+zws2brgOgTY7LUpb4ivQUOhjV5VaVNUQ/dYPX764PPfk5NCJmcqV1YVjZ0+cmH/0wvm3XO5qtVqj0RAR7z1bjqLEGGP6tyw93/E7KBUKeaEvTu516e1faW+Nos45OBBRpVIZHh621s7MzNhj4yvddjjnIB6X90wCBW2mOWRGpydvXrkmREePHt0cNVgDhyljh3OBYrEIwBgjoiJSslGXmY0JTzBJkpZrF4aTb37zm/Pz8zeWb64PVyajxKvYqMBsBIiiaGRkRHxfcSciolScKSbr7U0YUiCDZ8OZuGJsKYlB2S7VYa9qmF5fuPH6wg28BABgxMeGeOqh+eLwcK0+YytLC4tcb2/WNtfW1pxzm5ubzKykxkQm5FGSQnqc2OKTyO1VPnqLWWbZSuAVCQ+hWCxWq9Xp6em8Ymfm5pa1PT4xvpa38sheXV9BChx4Dn3PCNS7PBmLXi2wbre7sVnHLm6pUCz+i3/xLxzrt771LVuOFTpkCsbFS8vLRORVl1eXp0cmo6HKv/7iv/7ib38RY5W5ZLhys9mYLdZXN22i+fLaP/yN37DMWZYSD0MwPTSmzTRNu/XV1bHR6a5zRICgtl6rtkfqKxszR8Zbq41kptrdXT1yL7q103kY4xtrywDWWnUA110dYzj+yIliN3ucE9fOJiS5fvWq3+xsbGzU6/Usy9Isc84VCgUlMsYQM1SZ2RgDhkh/mwvvAUTGFIvFSqUyOTkZVUqzx+bWbT40PrqSbsbl8uLqzRVdA2Fp/fqBBuwO0Owvf+pwW9zthQEFRqPSwr/6VoiU8OrP/uJPX29v8L33ig9nzRSHs29dXFlZeeiRs+3HJ7rdtPuV140xtVrt85///Pj4+G/8xm/Mzc11u91ut+u9LxaLSZIUq+X4ow/Z86vd2TI22le//lKapsNT48lPnm1l3TNuaOmHbxljWq1WsVgUkTDqnU6nVCp1Oh1r7fz8fO3R0eXGxv7cWz1XcD9G+jYkUUxEx8emm43mEOJObdNvdrHZWbm55L1fW1sTEedc+Bkk0MjIyNDQUFIsjs9Nt4qYmz+6lDaqw0Nr3UY77Xaz9M4ObNneDkt1f48JNCJR/NpK/OxxZm5++3z6yESrgJ2HJzyCMxNzBRuvdxo36qtjLqoudsvPnMy76bXf+a6InPrsT1ASdbvdyFpjrXPOGNPw6Y3ayqnRmdVOo5G2PzR/Vjc7az84v/7oSJrnlbc2jv7YYz4igHyeO+8JUNUosqJKIGtsW9LL60tbY3Bw8Lbp6c4WYxsNlcslRAXYcSSLNxftRrq2sjI2NuaG4okj06vajSvFpVYNjHrrDgvnNrXpgBuj7oD3jEBBzMzFw6Ol6qu16wBOlicKUfx6bWFP7/dEaUi+/TY9NLVWEgATpWEirLTqO591qjo1lJkLL75SnJtYGYE1dvRyszI0VDo5lWbZ282VnStZPwgEXm5RSvuR49sxPzGTZ1kSJ1fXFm8n8Ta6aO+Dd+MW3jMdKLwTN7L6jawe1NhLrdVKsYTdsSd4uETFgB79sWdfpGVKUwCr7ToQoqtvt3P0DN8KMHHq3/7my8Nzk+0jFeo0nXfVh2ab3387qhTmhseXbaPpuzt0+0EgjPet9vurrUCioO5cW13cfkIvnjP8tlX/4d0N+XjPJNAtbL1qd3vn7gvDPFIZWtushV/vHc1x+1nFpNDNMufd1pQ0Oza5uLE6Uh7a7DSdv3ctkPcOW1rUg+PxXvEjQKBtOET14kf2ih8wvMfhHLdhf2O5PwPudvtK75MDtPbvLX60CLQ/7I92d91IZd+t/XuLDwKBBngPMSDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCBMCDQAAfCgEADHAgDAg1wIAwINMCB8P8DYXoqelLXbTIAAAAASUVORK5CYII=" alt="icon">
   <span>ثبّت التطبيق</span>
 </button>
 </div>
 
 <!-- Install Modal -->
-<div id="installModal" onclick="if(event.target===this)this.classList.remove(&#39;show&#39;)" class="">
+<div id="installModal" onclick="if(event.target===this)this.classList.remove('show')">
   <div class="im-box">
     <div class="im-header">
       <img src="data:image/png;base64,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" alt="Nukhba">
@@ -3367,12 +3477,12 @@ document.addEventListener('keydown', e => {
         <div class="im-title">Nukhba Hajj 2026</div>
         <div class="im-sub">جدول مناسك الحج التفاعلي الذكي</div>
       </div>
-      <button class="im-close" onclick="document.getElementById(&#39;installModal&#39;).classList.remove(&#39;show&#39;)">✕</button>
+      <button class="im-close" onclick="document.getElementById('installModal').classList.remove('show')">✕</button>
     </div>
 
     <div class="im-tabs">
-      <div class="im-tab active" onclick="switchTab(&#39;android&#39;)">🤖 Android</div>
-      <div class="im-tab" onclick="switchTab(&#39;ios&#39;)">🍎 iPhone</div>
+      <div class="im-tab active" onclick="switchTab('android')">🤖 Android</div>
+      <div class="im-tab" onclick="switchTab('ios')">🍎 iPhone</div>
     </div>
 
     <!-- Android: Chrome -->
@@ -3450,6 +3560,5 @@ function switchTab(tab) {
 })();
 </script>
 
-
-
-</body></html>
+</body>
+</html>
